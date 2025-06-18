@@ -1,0 +1,54 @@
+@page "/employees"
+@inject HttpClient Http
+
+<h3>Employees</h3>
+@if (employees == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Hire Date</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in employees)
+            {
+                <tr>
+                    <td>@emp.FullName</td>
+                    <td>@emp.Email</td>
+                    <td>@emp.HireDate.ToShortDateString()</td>
+                    <td>@emp.Department?.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Employee> employees;
+
+    protected override async Task OnInitializedAsync()
+    {
+        employees = await Http.GetFromJsonAsync<List<Employee>>("api/employees");
+    }
+
+    public class Employee
+    {
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public DateTime HireDate { get; set; }
+        public Department Department { get; set; }
+    }
+
+    public class Department
+    {
+        public string Name { get; set; }
+    }
+}
