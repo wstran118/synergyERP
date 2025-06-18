@@ -17,15 +17,15 @@
 
 ##  Project Structure
 SynergyERP/
-├── SynergyERP.API/ # Backend - ASP.NET Core Web API
-│ ├── Controllers/ # API endpoint controllers
-│ ├── Data/ # EF Core DbContext and repositories
-│ ├── DTOs/ # Data transfer objects
-│ ├── Middleware/ # Custom middleware (e.g., error handling)
-│ ├── Models/ # Domain models (Employee, Department, Expense)
-│ └── Startup.cs # Application setup and configuration
-├── SynergyERP.Web/ # Frontend - Blazor WebAssembly
-│ └── Pages/ # Razor components (EmployeeList.razor, etc.)
-├── SynergyERP.Tests/ # Test project (unit/integration tests)
-├── .github/workflows/ # GitHub Actions workflow for CI/CD
-└── README.md # Project readme
+- SynergyERP.API/ # Backend - ASP.NET Core Web API
+- - Controllers/ # API endpoint controllers
+- - Data/ # EF Core DbContext and repositories
+- - DTOs/ # Data transfer objects
+- - Middleware/ # Custom middleware (e.g., error handling)
+- - Models/ # Domain models (Employee, Department, Expense)
+- - Startup.cs # Application setup and configuration
+- SynergyERP.Web/ # Frontend - Blazor WebAssembly
+- - Pages/ # Razor components (EmployeeList.razor, etc.)
+- SynergyERP.Tests/ # Test project (unit/integration tests)
+- .github/workflows/ # GitHub Actions workflow for CI/CD
+- - README.md # Project readme
